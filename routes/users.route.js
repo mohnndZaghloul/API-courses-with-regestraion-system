@@ -35,6 +35,6 @@ router.route('/register')
             .post(upload.single('avatar'),register);
 
 router.route('/login')
-            .post(verifyToken, login);
+            .post(login);
 
 module.exports = router;
