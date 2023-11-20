@@ -10,7 +10,7 @@ const { ADMIN, MANAGER } = require('../utils/userRules');
 //get all courses and add new course
 router.route('/')
         .get(getAllCourses)
-        .post( validationSchema(), allowedTo(ADMIN, MANAGER), addCourse);
+        .post( validationSchema(), verifyToken, allowedTo(ADMIN, MANAGER), addCourse);
 
 // get,delete or update course by id
 router.route('/:courseID')
